@@ -50,6 +50,8 @@ function heading(label,title,sub,aside=''){return `<div class="page-heading"><di
 function loading(){APP.innerHTML='<div class="loading"><div class="spinner"></div><p>Loading secure records…</p></div>';}
 function setNav(){
   NAV.hidden=!user;
+  const practiceLink = NAV.querySelector('[data-view="practice"]');
+  if(staff && practiceLink && NAV.firstElementChild!==practiceLink)NAV.prepend(practiceLink);
   document.getElementById('sign-out').hidden=!user;
   document.getElementById('user-label').textContent=user?.email||'';
   NAV.querySelectorAll('[data-view]').forEach(el=>{
