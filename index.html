@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#12293d" />
+  <meta name="description" content="Secure client access to income-tax, GST, financial statements and compliance documents." />
+  <title>Theta Accounts | Client Portal</title>
+  <link rel="stylesheet" href="./assets/styles.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.119.1"></script>
+  <script defer src="./assets/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar">
+      <div class="brand"><span class="brand-mark">θ</span><span><strong>THETA</strong><small>ACCOUNTING PORTAL</small></span></div>
+      <div class="side-caption">SECURE CLIENT WORKSPACE</div>
+      <nav id="nav" aria-label="Main navigation" hidden>
+        <button class="side-link active" data-view="overview">◫ <span>Overview</span></button>
+        <button class="side-link" data-view="filings">▤ <span>Tax & GST filings</span></button>
+        <button class="side-link" data-view="documents">▧ <span>Documents</span></button>
+        <button class="side-link staff-link" data-view="practice" hidden>☷ <span>Practice workspace</span></button>
+      </nav>
+      <div class="sidebar-bottom"><span class="secure-dot"></span> Private &amp; access-controlled<br><small>Powered by Supabase</small></div>
+    </aside>
+    <div class="main-column">
+      <header class="topbar">
+        <div class="topbar-title"><span class="mobile-logo">θ</span><span>Client Portal <small>· Theta Digimarketing</small></span></div>
+        <div class="topbar-right"><span id="user-label" class="user-label"></span><button id="sign-out" class="ghost-btn" hidden>Sign out</button></div>
+      </header>
+      <main id="app" class="content" aria-live="polite">
+        <div class="loading"><div class="spinner"></div><p>Connecting securely…</p></div>
+      </main>
+      <footer class="site-footer">© <span id="year"></span> Theta Digimarketing · Confidential client information</footer>
+    </div>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
